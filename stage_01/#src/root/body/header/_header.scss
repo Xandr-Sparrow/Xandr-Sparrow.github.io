@@ -1,0 +1,26 @@
+@import "logo";
+@import "nav-info";
+@import "hidden-menu";
+@import "nav";
+@import "info";
+
+.header {
+  display: flex;
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+
+  @media (max-width:768px) {
+    flex-flow: column wrap;
+  }
+}
+
+.nav-info__container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}

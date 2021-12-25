@@ -1,0 +1,24 @@
+@import "contact__container/contact__container";
+
+
+.contact {
+  background: url(/img/rectangle.png) no-repeat center / cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  position: relative;
+
+  &__filter {
+    display: flex;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  &__title {
+    margin-top: 0;
+  }
+}

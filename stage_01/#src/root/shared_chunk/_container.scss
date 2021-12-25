@@ -1,0 +1,13 @@
+@import "container__block-1x2";
+@import "container__block-1x3";
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.625rem;
+
+  @media (max-width:768px) {
+    flex-direction: column;
+  }
+}

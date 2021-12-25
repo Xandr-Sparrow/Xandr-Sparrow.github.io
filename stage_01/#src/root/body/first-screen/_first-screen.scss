@@ -1,0 +1,37 @@
+.first-screen {
+  background: url(/img/rectangle.png) no-repeat center / cover;
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+  }
+
+  &__slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 80vh;
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 50vh;
+  }
+
+  &__title {
+    @media (max-width:768px) {
+      text-align: center;
+    }
+  }
+
+  &__button {
+    @media (max-width:768px) {
+      margin: 0 auto;
+    }
+  }
+
+}
