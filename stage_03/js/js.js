@@ -7,94 +7,109 @@
 let numbers = [4, 3, 10, 14, 32];
 
 function f_some() {
-    console.log(`Метод some`);
-
-    function zero_big(numbers) {
-        return numbers > 0;
+    let inner = "";
+    let find_item = prompt(`Значения для поиска в маcсиве ${numbers}`);
+    for (const x of numbers) {
+        if (find_item == x) {
+            inner = "";
+            console.log(true);
+            inner += `<p>true</p>`;
+            break;
+        } else if (find_item !== x) {
+            inner = "";
+            console.log(false);
+            inner += `<p>false</p>`;
+        }
     }
-
-    function zero_little(numbers) {
-        return numbers < 0;
-    }
-    if (numbers.some(zero_big)) {
-        console.log(`В массиве ${numbers} есть минимум одна положительная цифра`);
-    }
-    if (numbers.some(zero_little)) {
-        console.log(`В массиве ${numbers} есть минимум одна отрицательная цифра`);
-    }
+    document.getElementById("some").innerHTML = inner;
 }
 
-f_some();
+
 
 function f_split() {
-    console.log(`Метод split`);
-    let numbers_str = numbers.join(' ');
-    console.log(`Массив ${numbers} преобразован в строчку ${numbers_str}`);
-    let numbers_arr = numbers_str.split(' ');
-    console.log(`Строка ${numbers_str} преобразована в массив ${numbers_arr}`);
+    let numbers_ = prompt(`Ведите цифры через пробел. Значение меняется для всех функций`, `4 3 10 14 32`);
+    let reg = /\s?\d+\s?/g;
+    let result = numbers_.matchAll(reg);
+    result = Array.from(result);
+    numbers = result;
+    console.log(result);
+    document.getElementById("split").innerHTML = result;
 }
 
-f_split();
 
 function f_include() {
-    console.log(`Метод include`);
-    let num = 10;
-    console.log(`Выбрана цифра ${num}`);
-    let check_in = numbers.includes(num);
-    if (check_in) {
-        console.log(`Цифра ${num} присутствует в массиве ${numbers}`);
+    let inner = "";
+    let find_item = prompt(`Значения для поиска в маcсиве ${numbers}`);
+    for (const x of numbers) {
+        if (find_item == x) {
+            inner = "";
+            console.log(true);
+            inner += `<p>true</p>`;
+            break;
+        } else if (find_item !== x) {
+            inner = "";
+            console.log(false);
+            inner += `<p>false</p>`;
+        }
     }
+    document.getElementById("include").innerHTML = inner;
 }
 
-f_include();
 
 function f_map() {
-    console.log(`Метод map`);
-    let fun = numbers.map(item => item + 1);
-    console.log(`Значения массива ${numbers} увеличены на 1 => ${fun}`);
+
 }
 
-f_map();
 
 function f_reduce() {
-    console.log(`Метод reduce`);
-    let sums = numbers.reduce((sum, item) => sum + item);
-    let average_num = sums / numbers.length;
-    console.log(`Среднее арифметическое массива ${numbers} равно ${average_num}`);
+    let inner = "";
+    let sum_num = 0;
+    for (const x of numbers) {
+        console.log(sum_num += x);
+    }
+    inner += `<p>${sum_num}</p>`;
+    document.getElementById("reduce").innerHTML = inner;
 }
 
-f_reduce();
 
 function f_forEach() {
-    console.log(`Метод forEach`);
-    numbers.forEach((item, index) => {
-        console.log(`На ${index + 1} месте находится ${item}`);
-    });
+    let inner = "";
+    for (const x of numbers) {
+        console.log(x);
+        inner += `<p>${x}</p>`;
+    }
+    document.getElementById("foreach").innerHTML = inner;
 }
 
-f_forEach();
 
 function f_filter() {
-    console.log(`Метод filter`);
-    let two = numbers.filter(item => item % 2 === 0);
-    console.log(`В массиве ${numbers} четные числа ${two}`);
+
 }
 
-f_filter();
 
 function f_find() {
-    console.log(`Метод find`);
-    let item = numbers.find(item => item == 32);
-    console.log(`В массиве ${numbers} выбранное число ${item}`);
+    let inner = "";
+    let find_item = prompt(`Значения для поиска в маcсиве ${numbers}`);
+    for (const x of numbers) {
+        if (find_item == x) {
+            console.log(x);
+            inner += `<p>${x}</p>`;
+            break;
+        }
+    }
+    document.getElementById("find").innerHTML = inner;
 }
 
-f_find();
 
 function f_findIndex() {
-    console.log(`Метод findIndex`);
-    let num = 3;
-    let index = numbers.findIndex(index => index == num);
-    console.log(`В массиве ${numbers} число ${num} находится на ${index + 1} месте`);
+    let inner = "";
+    let find_item = prompt(`Введите индекс для поиска в массиве ${numbers}`);
+    if (numbers[find_item]) {
+        console.log(numbers[find_item]);
+        inner += `<p>${numbers[find_item]}</p>`;
+    } else {
+        console.log(-1);
+        inner += `<p>-1</p>`;
+    }
+    document.getElementById("findIndex").innerHTML = inner;
 }
-
-f_findIndex();
